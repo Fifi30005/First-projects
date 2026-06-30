@@ -91,4 +91,5 @@ with ui.column().classes("w-full items-center justify-center"):
         ui.button(on_click=lambda: remove_text(), color="red", icon="backspace").classes("ring-4 ring-red-500/20")
         ui.button("÷", on_click=lambda: divide_number(), color="green").classes("ring-4 ring-green-500/20")
     ui.button("=", on_click=lambda: equal_number(), color="cyan-9").classes("w-98 ring-4 ring-blue-500/20")
+
 ui.run(title="Calculator")
