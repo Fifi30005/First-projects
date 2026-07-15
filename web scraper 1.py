@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 url = "https://quotes.toscrape.com"
 response = requests.get(url)
 
+with open("scraped Content.txt", "w") as file:
+    file.write("")
+
 if response.status_code == 200:
     soup = BeautifulSoup(response.content, "html.parser")
     quotes = soup.find_all("span", class_="text")
@@ -12,7 +15,8 @@ if response.status_code == 200:
     for i in range(len(quotes)):
         quote_text = quotes[i].text
         author_text = authors[i].text
-        print(f"{quote_text} - {author_text}")
+        with open("scraped Content.txt", "a") as file:
+           file.write(f"{quote_text} - {author_text}\n")
 
 
 else:
