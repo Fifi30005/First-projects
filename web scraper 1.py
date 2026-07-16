@@ -9,7 +9,7 @@ if response.status_code == 200:
     quotes = soup.find_all("span", class_="text")
     authors = soup.find_all("small", class_="author")
 
-    with open(f"Scraped Content.txt", "w") as file:
+    with open(f"Scraped Content.txt", "w", encoding="utf-8") as file:
         for i in range(len(quotes)):
             quote_text = quotes[i].text
             author_text = authors[i].text
